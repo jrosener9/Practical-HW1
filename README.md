@@ -390,4 +390,8 @@ Still smart signatures are useful in some specific use cases like the above simp
 ## Submission
 Submit your form.md file and the python files you used to interact with the blockchain on gradescope.
 
+# Part 2 - The Ethereum Blockchain
+
+
+
 This concludes the homework! 🎉🎉
