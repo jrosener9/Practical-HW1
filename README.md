@@ -413,7 +413,7 @@ Note: If you already have a metamask account, feel free to continue using that. 
 Alchemy's API enables us to connect to the Ethereum blockchian (in our case, specifically, the Goerli testnet blockchain). Generating your own API key will enable you do get test ETH and do transactions. Refer to instructions here (https://docs.alchemy.com/docs/alchemy-quickstart-guide#1key-create-an-alchemy-key) to generate your own Alchemy API key. 
 
 ## Step 3 - Get some test ETH
-We need gas fees to conduct transactions on the blockchain. Thus, we need to load up on some test ETH before we can start making transactions. Use this [faucet] (https://goerlifaucet.com/) to add some test ETH to your account. You can see the test ETH being added on your MetaMask account. 
+We need gas fees to conduct transactions on the blockchain. Thus, we need to load up on some test ETH before we can start making transactions. Use this [faucet](https://goerlifaucet.com/) to add some test ETH to your account. You can see the test ETH being added on your MetaMask account. 
 
 
 
