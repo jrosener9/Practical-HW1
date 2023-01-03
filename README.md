@@ -1,9 +1,11 @@
-# Practical Homework 1 - Setup and Introduction to the Algorand Blockchain 
+# Practical Homework 1 - Setup and Introduction to the Algorand and Ethereum Blockchain 
 
 This is the homework for the Algorand class of "Building with Blockchain for Web 3.0" (https://buildweb3.org). The homework has been modified with permission to fit the needs of CIS 233 (Introduction to Blockchain) at the University of Pennsylvania.
 
 ## Why do this homework?
-Throughout this course, many of the practical programming homeworks will be done by interacting with some blockchain infrastructure. There are many available blockchain technologies that we can build our homeworks on. We have decided to go with the Algorand blockchain. This homework will provide some basic stepping stones to set up your developer environment and get you acquainted with interacting with the Algorand blockchain.
+Throughout this course, many of the practical programming homeworks will be done by interacting with some blockchain infrastructure. There are many available blockchain technologies that we can build our homeworks on. We have decided to go with the Algorand and Ethereum blockchains. This homework will provide some basic stepping stones to set up your developer environment and get you acquainted with interacting with the blockchains.
+
+# Part 1 - The Algorand Blockchain
 
 ## Background Concepts
 
