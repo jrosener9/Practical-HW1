@@ -34,3 +34,7 @@
 ## Step 5.2:
 
 * Transaction ID of the first transaction of the atomic transfer:
+
+## Step 6:
+
+* Address of account: 

@@ -1,11 +1,9 @@
 # Practical Homework 1 - Setup and Introduction to the Algorand and Ethereum Blockchains 
 
-The Algorand portion of this homework has been adopted from the materials of "Building with Blockchain for Web 3.0" (https://buildweb3.org) with permission to fit the needs of CIS 233 (Introduction to Blockchain) at the University of Pennsylvania. The Ethereum portion of this homework 
+The Algorand portion of this homework has been adopted from the materials of "Building with Blockchain for Web 3.0" (https://buildweb3.org) with permission to fit the needs of CIS 2330 (Introduction to Blockchain) at the University of Pennsylvania. The Ethereum portion of this homework has been adopted from the materials of CIS 7000 (Web3 Security, Fall 2022).
 
 ## Why do this homework?
 Throughout this course, many of the practical programming homeworks will be done by interacting with some blockchain infrastructure. There are many available blockchain technologies that we can build our homeworks on. We have decided to go with the Algorand and Ethereum blockchains. This homework will provide some basic stepping stones to set up your developer environment and get you acquainted with interacting with the blockchains.
-
-# Part 1 - The Algorand Blockchain
 
 ## Background Concepts
 
@@ -21,12 +19,13 @@ Further, you can create your own private instantiations of the Algorand network.
 
 In this homework, you will learn:
 
-1. how to create your first Algorand accounts.
-2. how to create and distribute your first asset or token on the Algorand blockchain.
-3. how to trade your token "atomically" without any third party.
-4. how to get the official "buildweb3" asset for just 4.2 Algos, by using your first smart signature (aka stateless smart contract).
+1. how to create your first Algorand and Ethereum accounts.
+2. how to get test ETH and ALGO for development
+3. how to create and distribute your first asset or token on the Algorand blockchain.
+4. how to trade your token "atomically" without any third party.
+5. how to get the official "buildweb3" asset for just 4.2 Algos, by using your first smart signature (aka stateless smart contract).
 
-*Warning*: All the homework is meant to be done on TestNet, where coins (called the Algos) are fake. When switching to MainNet, accounts store real cryptocurrency and proper security of key storage and management needs to be taken into consideration. We will never ask you to work on MainNet.
+*Warning*: All the homework is meant to be done on TestNet, where coins (called the Algos and Ether) are fake. When switching to MainNet, accounts store real cryptocurrency and proper security of key storage and management needs to be taken into consideration. We will never ask you to work on MainNet.
 
 Note that we expect you to learn how to read through some open source documentation to complete this homework. If this is new to you, this will be a very useful skill in working with any open source projects (including blockchain projects) in the future.
 
@@ -139,7 +138,7 @@ Account address: ZBXIRU3KVUTZMFC2MNDHFZ5RZMEH6FYGYZ32B6BEJHQNKWTUJUBB72WL4Y
 
 These accounts are now created and ready to use on the TestNet!
 
-### Step 1.1 - Fund the Two Accounts
+### Step 1.2 - Fund the Two Accounts
 
 **Task:** Add 10 Algos to each of the accounts. The Algo is the native cryptocurrency of the Algorand blockchain.
 
@@ -149,7 +148,7 @@ However, on TestNet, you can just use the [dispenser](https://bank.testnet.algor
 For each account, copy the address in the text field, click on/solve the CAPTCHA, and click on Submit.
 Refresh the page between each dispention.
 
-### Step 1.2 - Check the Balance of your Accounts
+### Step 1.3 - Check the Balance of your Accounts
 
 **Task:** Check that the two accounts now have at least 10 Algos.
 
@@ -346,6 +345,24 @@ print("Send transaction with txID: {}".format(txid))
 
 Remember to update [form.md](form.md) with the transaction ID of the first transaction of the atomic transfer.
 ```
+## Step 6 - Create An Ethereum Account and Fund It
+
+**Task:** Create an Ethereum account, get some test ETH, and report the address in [form.md](form.md).
+
+To conclude this assignment we will set up an account on the Ethereum blockchain like we did on the Algorand blockchain in step 1. These credentials will be used in later assignments which work on Ethereum.
+
+## Step 6.1 - Set up your Ethereum Wallet
+
+To create your account and wallet, we will be using [Metamask](https://metamask.io/). We will primarliy be working with the ETH Goerli Testnet. 
+Note: If you already have a metamask account, feel free to continue using that. However, please keep in mind to use the Testnet at all times when working on assignments. Otherwise, you're welcome to create another Metamask account. 
+
+## Step 6.2 - Set up your Alchemy Account
+
+Alchemy's API enables us to connect to the Ethereum blockchian (in our case, specifically, the Goerli testnet blockchain). Generating your own API key will enable you do get test ETH and do transactions. Refer to instructions here (https://docs.alchemy.com/docs/alchemy-quickstart-guide#1key-create-an-alchemy-key) to generate your own Alchemy API key. 
+
+## Step 6.3 - Get some test ETH
+
+We need gas fees to conduct transactions on the blockchain. Thus, we need to load up on some test ETH before we can start making transactions. Use this [faucet](https://goerlifaucet.com/) to add some test ETH to your account. You can see the test ETH being added on your MetaMask account. 
 
 ### Going Further (helpful info for HW 2)
 
@@ -391,31 +408,5 @@ Still smart signatures are useful in some specific use cases like the above simp
 
 ## Submission
 Submit your form.md file and the python files you used to interact with the blockchain on gradescope.
-
-# Part 2 - The Ethereum Blockchain
-
-For the Ethereum side of this assignment, you will mint yourself a fresh CIS 2330 NFT! (This homework takes inspiration from CIS 7000's Mint a NFT HW)
-
-## Overview
-In this homework, you will learn:
-
-1. The basics of ethereum accounts and wallets
-2. How to get test ETH from a faucet
-3. The basics of ethereum transactions
-4. How to interact with our existing deployed course smart contract using the Web3.js API
-
-## Step 1 - Set up your Ethereum Wallet
-
-To create your account and wallet, we will be using [Metamask](https://metamask.io/). We will primarliy be working with the ETH Goerli Testnet. 
-Note: If you already have a metamask account, feel free to continue using that. However, please keep in mind to use the Testnet at all times when working on assignments. Otherwise, you're welcome to create another Metamask account. 
-
-## Step 2 - Set up your Alchemy Account
-Alchemy's API enables us to connect to the Ethereum blockchian (in our case, specifically, the Goerli testnet blockchain). Generating your own API key will enable you do get test ETH and do transactions. Refer to instructions here (https://docs.alchemy.com/docs/alchemy-quickstart-guide#1key-create-an-alchemy-key) to generate your own Alchemy API key. 
-
-## Step 3 - Get some test ETH
-We need gas fees to conduct transactions on the blockchain. Thus, we need to load up on some test ETH before we can start making transactions. Use this [faucet](https://goerlifaucet.com/) to add some test ETH to your account. You can see the test ETH being added on your MetaMask account. 
-
-
-
 
 This concludes the homework! 🎉🎉

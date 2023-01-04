@@ -33,3 +33,7 @@
 ## Step 5.2:
 
 * Transaction ID of the first transaction of the atomic transfer: `GXTO6KM4YPNGBZEWZT7CVZHFFLLL4PX32DKOQPZDUURN33BWY3EA`
+
+## Step 6:
+
+* Address of account: `b8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01`
