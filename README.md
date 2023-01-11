@@ -381,16 +381,7 @@ Now, let’s dig into the code to do this..
 
 There are many ways to interact with a smart contract, but for this assignment we’ve included a template for a Javascript program that uses the [Web3 API](https://web3js.readthedocs.io/en/v1.2.11/web3-eth.html#sendsignedtransaction).
 
-Download our template program and JSON artifact. Place them in the same directory.
-
-// TODO: fix links
-[Web3SecCourseNFT.json](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71e7a3e9-cd89-4724-8180-79a83568509b/Web3SecCourseNFT.json)
-
-[hw0.js.txt](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9958485-0834-4585-8de9-d17c841feba1/hw0.js.txt)
-
-Rename `hw0` to the correct file extension. (We had to fake a `txt` file to upload the file…)
-
-`mv hw0.js.txt hw0.js`
+Our template program `hw1-eth.js` and JSON artifact `IntroToBlockchainNFT.json` are in this github repository. Download them and place them in the same directory.
 
 Then, install Alchemy using
 
@@ -424,7 +415,7 @@ Now that we’re done with setting up our transaction, we have to sign it off. J
  Write code to mint the NFT. First, in line 46, we increment the nonce since our transaction account increased when we sent the last transaction. Then, create the transaction object similar to the last transaction. We’ve left the data field empty as an exercise.
 
 ### Step 4.4
- Run your code to make the transactions: `node hw0.js`. If your transaction was successful, you should see some output like:
+ Run your code to make the transactions: `node hw1-eth.js`. If your transaction was successful, you should see some output like:
 
 ```jsx
 The hash of your transaction is:  0x…
