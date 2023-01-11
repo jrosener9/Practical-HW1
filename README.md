@@ -1,4 +1,4 @@
-# Practical Homework 1 - Setup and Introduction to the Algorand and Ethereum Blockchains 
+# Practical Homework 1 - Setup and Introduction to the Algorand and Ethereum Blockchains
 
 The Algorand portion of this homework has been adopted from the materials of "Building with Blockchain for Web 3.0" (https://buildweb3.org) with permission to fit the needs of CIS 2330 (Introduction to Blockchain) at the University of Pennsylvania. The Ethereum portion of this homework has been adopted from the materials of CIS 7000 (Web3 Security, Fall 2022).
 
@@ -15,12 +15,14 @@ There are multiple instances of this network. The two largest instances are call
 
 Further, you can create your own private instantiations of the Algorand network. In the extreme case, this network may consist of just one node such as your laptop.
 
+# Part 1 - Algorand
+
 ## Overview
 
-In this homework, you will learn:
+In this part of the homework, you will learn:
 
 1. how to create your first Algorand and Ethereum accounts.
-2. how to get test ETH and ALGO for development
+2. how to get test ALGO for development
 3. how to create and distribute your first asset or token on the Algorand blockchain.
 4. how to trade your token "atomically" without any third party.
 5. how to get the official "buildweb3" asset for just 4.2 Algos, by using your first smart signature (aka stateless smart contract).
@@ -276,94 +278,6 @@ On [AlgoExplorer](https://testnet.algoexplorer.io) you can see that transactions
 
 If you do not see the above, it means you sent two independent transactions instead of making an atomic transfer.
 
-## Step 5 - Automating Trading (18 Points Extra Credit)
-
-While atomic transfers are very useful to trade assets, they require each account involved in the trade to sign the transactions.
-In some cases, you may want to allow anybody to trade assets with you without having to sign transactions.
-Smart signatures allow to make an account automatically approve transactions that follow some criteria.
-
-To show the power of smart signatures, we created an exclusive asset for the class "buildweb3" and provided a smart signature that will allow you to receive 1 unit of the asset for just 4.2 Algos!
-The smart signature approves transactions of 1 unit of the asset if it is in a group of 2 transactions (aka atomic transfer) where:
-1. the first transaction sends 4.2 Algos to the smart signature account (this transaction is signed by your account),
-2. the second transaction sends 1 unit of the asset "buildweb3" from the smart signature account (this transaction is approved by the smart signature rather than being signed).
-
-### Step 5.1 - Opt-in to the Exclusive Asset "buildweb3"
-
-**Task:** Make account A opt in to the asset "buildweb3" with ID 14035004. Report the opt-in transaction ID on [form.md](form.md).
-
-Remember that opt-in transactions were covered in Step 3.3.
-
-### Step 5.2 - Receive 1 "buildweb3" Asset
-
-**Task:** Make an atomic transfer of 4.2 Algos from account A to `4O6BRAPVLX5ID23AZWV33TICD35TI6JWOHXVLPGO4VRJATO6MZZQRKC7RI` and of 1 "buildweb3" asset (ID 14035004) from `4O6BRAPVLX5ID23AZWV33TICD35TI6JWOHXVLPGO4VRJATO6MZZQRKC7RI` to account A, where the second transaction is signed using the [signed smart signature (aka delegated logic sig)](step5.lsig).
-
-This task is similar to Step 4, except that the second transaction is signed using a delegated logic sig / smart signature instead of a normal signature.
-Concretely, assume `txn2` is the second transaction of your atomic transfer
-Instead of signing it with `stxn2 = txn2.sign(private_key)`, you do the following:
-```py
-with open("step5.lsig", "rb") as f:
-    lsig = encoding.future_msgpack_decode(base64.b64encode(f.read()))
-stxn2 = LogicSigTransaction(txn2, lsig)
-```
-
-The full script should look like:
-```py
-import base64
-
-from algosdk import mnemonic, encoding
-from algosdk.v2client import algod
-from algosdk.future import transaction
-from algosdk.future.transaction import LogicSigTransaction, PaymentTxn, AssetTransferTxn
-
-# Setup algod_client and global variables
-...
-
-# Get the suggested parameters
-params = algod_client.suggested_params()
-
-# Create the two transactions
-txn1 = PaymentTxn(...)
-txn2 = AssetTransferTxn(...)
-
-# Group the two transactions
-...
-
-# Sign both transactions
-stxn1 = txn1.sign(...)
-with open("step5.lsig", "rb") as f:
-    lsig = encoding.future_msgpack_decode(base64.b64encode(f.read()))
-stxn2 = LogicSigTransaction(txn2, lsig)
-
-# Assemble the signed group
-signed_group = [stxn1, stxn2]
-
-# Send the signed group
-txid = algod_client.send_transactions(signed_group)
-
-# Print the transaction ID of the first transaction of the group
-print("Send transaction with txID: {}".format(txid))
-
-Remember to update [form.md](form.md) with the transaction ID of the first transaction of the atomic transfer.
-```
-## Step 6 - Create An Ethereum Account and Fund It
-
-**Task:** Create an Ethereum account, get some test ETH, and report the address in [form.md](form.md).
-
-To conclude this assignment we will set up an account on the Ethereum blockchain like we did on the Algorand blockchain in step 1. These credentials will be used in later assignments which work on Ethereum.
-
-## Step 6.1 - Set up your Ethereum Wallet
-
-To create your account and wallet, we will be using [Metamask](https://metamask.io/). We will primarliy be working with the ETH Goerli Testnet. 
-Note: If you already have a metamask account, feel free to continue using that. However, please keep in mind to use the Testnet at all times when working on assignments. Otherwise, you're welcome to create another Metamask account. 
-
-## Step 6.2 - Set up your Alchemy Account
-
-Alchemy's API enables us to connect to the Ethereum blockchian (in our case, specifically, the Goerli testnet blockchain). Generating your own API key will enable you do get test ETH and do transactions. Refer to instructions here (https://docs.alchemy.com/docs/alchemy-quickstart-guide#1key-create-an-alchemy-key) to generate your own Alchemy API key. 
-
-## Step 6.3 - Get some test ETH
-
-We need gas fees to conduct transactions on the blockchain. Thus, we need to load up on some test ETH before we can start making transactions. Use this [faucet](https://goerlifaucet.com/) to add some test ETH to your account. You can see the test ETH being added on your MetaMask account. 
-
 ### Going Further (helpful info for HW 2)
 
 #### Contract Accounts vs Delegated Logic Sig
@@ -405,6 +319,125 @@ The developer websites contain several examples of stateful smart contracts on A
 
 Most dApps actually now use smart contracts rather than smart signatures.
 Still smart signatures are useful in some specific use cases like the above simple automated trading (a smart contract would have been slightly more complex) and when very complex operations need to be performed (like slow cryptographic operations).
+
+# Part 2 - Ethereum
+
+## Overview:
+
+In this portion of the assignment, you will create your own Ethereum account and wallet. You will also learn to interact with a smart contract deployed on Ethereum’s Georli test network. When you’ve completed the assignment, you’ll get a CIS233 Course Enrollment NFT! You will learn..
+
+1. The basics of ethereum accounts and wallets
+2. How to get test ETH from a faucet
+3. The basics of ethereum transactions
+4. How to interact with our existing deployed course smart contract using the Web3.js API
+
+### Resources
+
+1. [Ethereum Account Documentation](https://ethereum.org/en/developers/docs/accounts/)
+2. [Ethereum Transaction Documentation](https://ethereum.org/en/developers/docs/transactions/)
+3. [Test ETH faucet](https://goerlifaucet.com/)
+4. [MetaMask](https://metamask.io/)
+5. [Etherscan](https://goerli.etherscan.io/)
+// TODO: thorough check of smart contract
+6. [The CIS2330 HW1 Smart Contract](https://goerli.etherscan.io/address/0x72FAf4BDaDb537Ca08EE9d3248B1d20391AE6D5A)
+7. [Javsacript Web3 API](https://web3js.readthedocs.io/en/v1.2.11/web3-eth.html#sendsignedtransaction)
+8. [SHA-256 Calculator](https://emn178.github.io/online-tools/sha256.html)
+9. [Alchemy](https://www.alchemy.com/)
+
+## Step 1 - Setting up your Ethereum wallet
+
+A wallet is an interface that allows you to interact with your Ethereum account. The first step in this assignment is to create a [MetaMask](https://metamask.io/)
+ wallet and account. This Medium post contains instructions: https://myterablock.medium.com/how-to-create-or-import-a-metamask-wallet-a551fc2f5a6b
+
+## Step 2 - Make an Alchemy Account
+
+You will need your API key to get test ETH and to make transactions. Follow step 1 of these instructions: [https://docs.alchemy.com/docs/alchemy-quickstart-guide#1key-create-an-alchemy-key](https://docs.alchemy.com/docs/alchemy-quickstart-guide#1key-create-an-alchemy-key)
+
+Create your app on the **Ethereum Chain** on the **Georli Testnet**
+
+## Step 3 - Get some Test ETH!****
+
+Head over to a [Test ETH faucet](https://goerlifaucet.com/) and transfer some funds to your wallet. You’ll need to sign into Alchemy.
+
+## Step 4 - Send a sequence of transactions to mint a course NFT**** (18 points)
+
+This portion will be the bulk of the assignment. 
+
+First, check out [our contract](https://goerli.etherscan.io/address/0x345565c62EFB2859769b6Ee887577123C550a6Ff) on etherscan. You can click the *Contract* tab to view our source code. It’s OK if you don’t understand the code quite yet, you will be learning Solidity in upcoming weeks. The important thing to notice here is the `mintNFT` function signature. Notice it takes no arguments, and contains the modifier `isInAddressBook(msg.sender)`. This means the sender of the transaction (you!) must be in the address book.
+
+```jsx
+function mintNFT() public isInAddressBook(msg.sender)
+```
+
+This means, to get our NFT, you will need to make the following two transactions (more details on how to do this below):
+
+1. Enter yourself in the address book. For added privacy, enter a sha256 hash of your real name. In gradescope, submit the exact string you used to generate your sha256 hash (Capitalization matters!).
+    
+    If you choose to submit your unencoded name, anyone who views the `AddressBook` mapping can associate your ethereum account number with you! By sending your name to the course staff, we will be able to generate that hash and associate your wallet with you without compromising your alias privacy on the blockchain.
+    
+2. Mint yourself an NFT. This won’t work if you’re not in the address book.
+
+Now, let’s dig into the code to do this..
+
+There are many ways to interact with a smart contract, but for this assignment we’ve included a template for a Javascript program that uses the [Web3 API](https://web3js.readthedocs.io/en/v1.2.11/web3-eth.html#sendsignedtransaction).
+
+Download our template program and JSON artifact. Place them in the same directory.
+
+// TODO: fix links
+[Web3SecCourseNFT.json](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71e7a3e9-cd89-4724-8180-79a83568509b/Web3SecCourseNFT.json)
+
+[hw0.js.txt](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9958485-0834-4585-8de9-d17c841feba1/hw0.js.txt)
+
+Rename `hw0` to the correct file extension. (We had to fake a `txt` file to upload the file…)
+
+`mv hw0.js.txt hw0.js`
+
+Then, install Alchemy using
+
+```jsx
+npm install @alch/alchemy-web3
+```
+
+### Step 4.1
+Initialize the fields in lines 1-3 with your Alchemy API key, Public Key, and Private key.
+
+### Step 4.2 
+Write code to enter yourself in the address book. The template includes most of the code with some `TODOs` for you to fill in.
+
+The code for sending transactions is in the function `mintNFT` starting in line 30.
+
+First, in line 32, enter the [SHA-256 hash](https://emn178.github.io/online-tools/sha256.html) of your name on the RHS of the assignment to `hashOfName`. Record the exact string you used to generate this hash and submit it to Gradescope. This variable will be used as an argument to the `enterAddressIntoBook` function.
+
+The transaction object contains the following fields:
+
+- `from`: The address that is sending the transaction (you!)
+- `to`: The address that will receive the transactions (our smart contract)
+- `nonce`: The number of transactions sent from our address
+- `gas`: Any computation that changes the state of the EVM requires some gas. This field indicates the amount of gas you are willing to pay.
+- `data`: What we want to do with this transaction—minting a NFT. The data field contains encoded info on the function we want to call, and the arguments we want to send.
+
+More details on the structure of a transaction and each of its fields can be found [here](https://ethereum.org/en/developers/docs/transactions/)..
+
+Now that we’re done with setting up our transaction, we have to sign it off. Just like writing a check and then signing it with your unique handwritten signature. The code for this is in `sendTx`. It also includes some error handling to confirm your transactions were made successfully. For instance, you want to make sure that your transaction was mined and not dropped by the network.
+
+### Step 4.3
+ Write code to mint the NFT. First, in line 46, we increment the nonce since our transaction account increased when we sent the last transaction. Then, create the transaction object similar to the last transaction. We’ve left the data field empty as an exercise.
+
+### Step 4.4
+ Run your code to make the transactions: `node hw0.js`. If your transaction was successful, you should see some output like:
+
+```jsx
+The hash of your transaction is:  0x…
+The hash of your transaction is:  0x…
+```
+
+### Step 4.5
+ Head over to Etherscan to inspect your transactions. After a minute or so, you should see your transactions to the HW0 contract: [https://goerli.etherscan.io/address/0x345565c62EFB2859769b6Ee887577123C550a6Ff](https://goerli.etherscan.io/address/0x345565c62EFB2859769b6Ee887577123C550a6Ff)
+
+### Step 4.6
+ Check out your NFT! Although it’s in our account on the blockchain, it won’t be shown in your MetaMask wallet by default. Follow these instructions to add it: [https://ethereum.org/en/developers/tutorials/how-to-view-nft-in-metamask/](https://ethereum.org/en/developers/tutorials/how-to-view-nft-in-metamask/)
+
+Unfortunately, NFT viewing in MetaMask is only supported on mobile. So, you’ll have to set up MetaMask on your phone (using the same account info) to see it.
 
 ## Submission
 Submit your form.md file and the python files you used to interact with the blockchain on gradescope.

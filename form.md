@@ -1,5 +1,7 @@
 # Form to Fill Out
 
+# Part 1: Algorand
+
 ## Step 1.1:
 
 * Address of account A: 
@@ -35,6 +37,8 @@
 
 * Transaction ID of the first transaction of the atomic transfer:
 
-## Step 6:
+# Part 2: Ethereum
 
-* Address of account: 
+## Step 4.5: 
+
+* Transaction ID of smart contract call: 
