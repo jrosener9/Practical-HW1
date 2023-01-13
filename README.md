@@ -339,7 +339,7 @@ In this portion of the assignment, you will create your own Ethereum account and
 4. [MetaMask](https://metamask.io/)
 5. [Etherscan](https://goerli.etherscan.io/)
 // TODO: thorough check of smart contract
-6. [The CIS2330 HW1 Smart Contract](https://goerli.etherscan.io/address/0x72FAf4BDaDb537Ca08EE9d3248B1d20391AE6D5A)
+6. [The CIS2330 HW1 Smart Contract](https://goerli.etherscan.io/address/0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9)
 7. [Javsacript Web3 API](https://web3js.readthedocs.io/en/v1.2.11/web3-eth.html#sendsignedtransaction)
 8. [SHA-256 Calculator](https://emn178.github.io/online-tools/sha256.html)
 9. [Alchemy](https://www.alchemy.com/)
@@ -361,9 +361,9 @@ Head over to a [Test ETH faucet](https://goerlifaucet.com/) and transfer some fu
 
 ## Step 4 - Send a sequence of transactions to mint a course NFT**** (18 points)
 
-This portion will be the bulk of the assignment. 
+This portion will be the bulk of the Ethereum part of the assignment. 
 
-First, check out [our contract](https://goerli.etherscan.io/address/0x345565c62EFB2859769b6Ee887577123C550a6Ff) on etherscan. You can click the *Contract* tab to view our source code. It’s OK if you don’t understand the code quite yet, you will be learning Solidity in upcoming weeks. The important thing to notice here is the `mintNFT` function signature. Notice it takes no arguments, and contains the modifier `isInAddressBook(msg.sender)`. This means the sender of the transaction (you!) must be in the address book.
+First, check out [our contract](https://goerli.etherscan.io/address/0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9) on etherscan. You can click the *Contract* tab to view our source code. It’s OK if you don’t understand the code quite yet, you will be learning Solidity in upcoming weeks. The important thing to notice here is the `mintNFT` function signature. Notice it takes no arguments, and contains the modifier `isInAddressBook(msg.sender)`. This means the sender of the transaction (you!) must be in the address book.
 
 ```jsx
 function mintNFT() public isInAddressBook(msg.sender)
@@ -423,7 +423,7 @@ The hash of your transaction is:  0x…
 ```
 
 ### Step 4.5
- Head over to Etherscan to inspect your transactions. After a minute or so, you should see your transactions to the HW0 contract: [https://goerli.etherscan.io/address/0x345565c62EFB2859769b6Ee887577123C550a6Ff](https://goerli.etherscan.io/address/0x345565c62EFB2859769b6Ee887577123C550a6Ff)
+ Head over to Etherscan to inspect your transactions. After a minute or so, you should see your transactions to the HW0 contract: [https://goerli.etherscan.io/address/0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9](https://goerli.etherscan.io/address/0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9)
 
 ### Step 4.6
  Check out your NFT! Although it’s in our account on the blockchain, it won’t be shown in your MetaMask wallet by default. Follow these instructions to add it: [https://ethereum.org/en/developers/tutorials/how-to-view-nft-in-metamask/](https://ethereum.org/en/developers/tutorials/how-to-view-nft-in-metamask/)
