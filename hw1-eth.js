@@ -1,12 +1,12 @@
-const API_URL = "https://eth-goerli.g.alchemy.com/v2/[Your api key here]"  //TODO
+const API_URL = "https://eth-goerli.g.alchemy.com/v2/[Your api key here]"  // TODO
 const PUBLIC_KEY = ""; //TODO Your account address here
 const PRIVATE_KEY = ""; //TODO Your private key here
 
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3")
 const web3 = createAlchemyWeb3(API_URL)
 
-const contract = require("./Web3SecCourseNFT.json")
-const contractAddress = "0x345565c62EFB2859769b6Ee887577123C550a6Ff"
+const contract = require("./IntroToBlockchainNFT.json")
+const contractAddress = "0x72FAf4BDaDb537Ca08EE9d3248B1d20391AE6D5A"
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress)
 
 async function sendTx(tx) {
