@@ -5,7 +5,7 @@ The Algorand portion of this homework has been adopted from the materials of "Bu
 ## Why do this homework?
 Throughout this course, many of the practical programming homeworks will be done by interacting with some blockchain infrastructure. There are many available blockchain technologies that we can build our homeworks on. We have decided to go with the Algorand and Ethereum blockchains. This homework will provide some basic stepping stones to set up your developer environment and get you acquainted with interacting with the blockchains.
 
-*Note:* This write-up is fairly long, but don't be overwhelmed by it's length. Since this homework's main purpose is to help you setup and become familiar with blockchain programming, we have provided a lot of guidance through the steps. The homework ideally should take around 3-4 hours and many students may be able to compelete in significantly lesser time as well. 
+*Note:* This write-up is fairly long, but don't be overwhelmed by it's length. Since this homework's main purpose is to help you setup and become familiar with blockchain programming, we have provided a lot of guidance through the steps. The homework is not intended to be time intensive and some students may find themselves moving through this fairly quickly.
 
 ## Background Concepts
 
