@@ -434,4 +434,26 @@ Unfortunately, NFT viewing in MetaMask is only supported on mobile. So, you’ll
 ## Submission
 Submit your form.md file and the python files you used to interact with the blockchain on gradescope.
 
+# FAQs
+## Algorand Part
+1. Note from last sem: There was a bit of confusion on Step 2: " Task: From accounts A and B, send 1.42 Algos to 4O6BRAPVLX5ID23AZWV33TICD35TI6JWOHXVLPGO4VRJATO6MZZQRKC7RI with notes my first Algorand transaction and my second Algorand transaction respectively." This step is asking you to make a transaction from each of the two accounts with the given address as the recipient. You are not sending 1.42 Algos from one account to another.
+2. Do I need to use sandbox to connect to the Algorand blockchain?
+	- No, use the PureStake API key as said in the instructions
+3. I keep getting a "transaction rejected by logic" error when I try to run this code.
+	- Check the ordering of your grouping! You might have to switch it. Come to the TAs/post on Ed if you still face issues.
+4. Issues importing algosdk
+	- Check out Fabrice's (our very own developer associate) answer for this [here] (https://forum.algorand.org/t/import-error-no-module-name-algodsdk-v2client/3781)
+5. Grouped tx but dont see the proper icon on AlgoExplorer
+	- The grouping icon seems to only show up on AlgoExplorer when looking at the transactions from the Algorand Account Overview. When looking at it from the Group Overview page there is no icon, but the fact that the transactions are together on the Group Overview page already shows that the transactions are in the same group!
+6. Error: Please select a valid Python interpreter
+	- In the bottom right (on the status bar) there should be a button that you can click on and add an interpreter and set up a virtual environment.
+7. Step 5.2 Getting "No such file or directory: 'step5.lsig'
+	- That's a python error.  Usually it means that the file is not in the same directory as the program. Perhaps you can put file 'step5.lsig' in the directory src.
+8. No module named algosdk error
+	- Go to the Python Interpreter and adding the py-algorand-sdk package in there.
+
+## Ethereum Part
+1. 
+
+
 This concludes the homework! 🎉🎉
