@@ -28,6 +28,7 @@
 ## Step 4:
 
 * Transaction ID of the first transaction of the atomic transfer:
+* Transaction ID of the second transaction of the atomic transfer:
 
 ## Step 5.1:
 

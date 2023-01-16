@@ -1,6 +1,6 @@
 # Example of Filled-Out Form (potentially outdated! Use as guideline only)
 
-# Part 1: Ethereum
+# Part 1: Algorand
 
 ## Step 1.1:
 
@@ -28,6 +28,8 @@
 ## Step 4:
 
 * Transaction ID of the first transaction of the atomic transfer: `SXMMAGETGZ6SJS2CULLL5IAA4CFGUKA7N6LHLIH37NFEBAGH3XCA`
+* Transaction ID of the second transaction of the atomic transfer:
+`XPNV53JVVKHNSWKF7IV5E6BV726NMXXS6TIO7Q6GMCSDRF7RMICQ`
 
 ## Step 5.1:
 
@@ -41,7 +43,7 @@
 
 * Address of account: `b8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01`
 
-# Part 2: Algorand
+# Part 2: Ethereum
 
 ## Step 4.4:
 
