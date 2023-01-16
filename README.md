@@ -258,7 +258,7 @@ Atomic transfers allow to group two transactions (transfer of asset from A to B,
 * either both transactions are successful: A gets its Algos and B gets its asset;
 * or both transactions fail: A keeps it asset and B keeps its Algos.
 
-**Task:** Make an atomic transfer where account B sends 1.2 Algos to account A and account A send 1 asset to account B. Report the transaction ID of the both transactions of the atomic transfer on [form.md](form.md)
+**Task:** Make an atomic transfer where account B sends 1.2 Algos to account A and account A send 1 asset to account B. Report the transaction ID of both transactions of the atomic transfer on [form.md](form.md)
 
 Follow the [tutorial on the developer documentation](https://developer.algorand.org/docs/features/atomic_transfers).
 Concretely, your Python script needs to:
