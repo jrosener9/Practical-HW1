@@ -5,13 +5,15 @@ The Algorand portion of this homework has been adopted from the materials of "Bu
 ## Why do this homework?
 Throughout this course, many of the practical programming homeworks will be done by interacting with some blockchain infrastructure. There are many available blockchain technologies that we can build our homeworks on. We have decided to go with the Algorand and Ethereum blockchains. This homework will provide some basic stepping stones to set up your developer environment and get you acquainted with interacting with the blockchains.
 
+*Note:* This write-up is fairly long, but don't be overwhelmed by it's length. Since this homework's main purpose is to help you setup and become familiar with blockchain programming, we have provided a lot of guidance through the steps. The homework ideally should take around 3-4 hours and many students may be able to compelete in significantly lesser time as well. 
+
 ## Background Concepts
 
 A few key concepts to keep in mind throughout this homework.
 
-The first is that “the blockchain” that you will be interacting with can be thought of as an instantiation of some protocol, in this case the Algorand protocol. This protocol defines a network of nodes (Algorand nodes), which at a very basic level are computers all around the world that are running the Algorand software, which implements the Algorand protocol. 
+The first is that “the blockchain” that you will be interacting with can be thought of as an instantiation of some protocol, in this case the Algorand and Ethereum protocols. This protocol defines a network of nodes (Algorand and Ethereum nodes), which at a very basic level are computers all around the world that are running the Algorand and Ethereum software, which implements the Algorand and Ethereum protocols. 
 
-There are multiple instances of this network. The two largest instances are called the MainNet and the TestNet. These are both public networks (as in anyone can access and interact with them), but the MainNet uses a fixed supply of the native currency Algo, which has real monetary value. The TestNet on the other hand is public but for sandboxing purposes and thus has a “fake” Algo currency that can be generated out of thin-air (instead of purchasing them with real money). We will interact with the TestNet and not the MainNet in this homework.
+There are multiple instances of this network. The two largest instances are called the MainNet and the TestNet (for Ethereum, we will be using the Goerli Testnet). These are both public networks (as in anyone can access and interact with them), but the MainNet uses a fixed supply of the native currency, which has real monetary value. The TestNet on the other hand is public but for sandboxing purposes and thus has a “fake” currency that can be generated out of thin-air (instead of purchasing them with real money). We will interact with the TestNet and not the MainNet in this homework.
 
 Further, you can create your own private instantiations of the Algorand network. In the extreme case, this network may consist of just one node such as your laptop.
 
@@ -324,7 +326,7 @@ Still smart signatures are useful in some specific use cases like the above simp
 
 ## Overview:
 
-In this portion of the assignment, you will create your own Ethereum account and wallet. You will also learn to interact with a smart contract deployed on Ethereum’s Georli test network. When you’ve completed the assignment, you’ll get a CIS233 Course Enrollment NFT! You will learn..
+In this portion of the assignment, you will create your own Ethereum account and wallet. You will also learn to interact with a smart contract deployed on Ethereum’s Goerli test network. When you’ve completed the assignment, you’ll get a CIS233 Course Enrollment NFT! You will learn..
 
 1. The basics of ethereum accounts and wallets
 2. How to get test ETH from a faucet
@@ -433,5 +435,27 @@ Unfortunately, NFT viewing in MetaMask is only supported on mobile. So, you’ll
 
 ## Submission
 Submit your form.md file and the python files you used to interact with the blockchain on gradescope.
+
+# FAQs
+## Algorand Part
+1. Note from last sem: There was a bit of confusion on Step 2: " Task: From accounts A and B, send 1.42 Algos to 4O6BRAPVLX5ID23AZWV33TICD35TI6JWOHXVLPGO4VRJATO6MZZQRKC7RI with notes my first Algorand transaction and my second Algorand transaction respectively." This step is asking you to make a transaction from each of the two accounts with the given address as the recipient. You are not sending 1.42 Algos from one account to another.
+2. Do I need to use sandbox to connect to the Algorand blockchain?
+	- No, use the PureStake API key as said in the instructions
+3. I keep getting a "transaction rejected by logic" error when I try to run this code.
+	- Check the ordering of your grouping! You might have to switch it. Come to the TAs/post on Ed if you still face issues.
+4. Issues importing algosdk
+	- Check out Fabrice's (our very own developer associate) answer for this [here] (https://forum.algorand.org/t/import-error-no-module-name-algodsdk-v2client/3781)
+5. Grouped tx but dont see the proper icon on AlgoExplorer
+	- The grouping icon seems to only show up on AlgoExplorer when looking at the transactions from the Algorand Account Overview. When looking at it from the Group Overview page there is no icon, but the fact that the transactions are together on the Group Overview page already shows that the transactions are in the same group!
+6. Error: Please select a valid Python interpreter
+	- In the bottom right (on the status bar) there should be a button that you can click on and add an interpreter and set up a virtual environment.
+7. Step 5.2 Getting "No such file or directory: 'step5.lsig'
+	- That's a python error.  Usually it means that the file is not in the same directory as the program. Perhaps you can put file 'step5.lsig' in the directory src.
+8. No module named algosdk error
+	- Go to the Python Interpreter and adding the py-algorand-sdk package in there.
+
+## Ethereum Part
+1. This part of the homework should be fairly trivial, post on Ed or come to OHs if you have any questions. 
+
 
 This concludes the homework! 🎉🎉
