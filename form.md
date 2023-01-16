@@ -39,6 +39,6 @@
 
 # Part 2: Ethereum
 
-## Step 4.3: 
+## Step 4.4: 
 
 * Second transaction hash:
