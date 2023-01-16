@@ -1,4 +1,6 @@
-# Example of Filled-Out Form (potentially outdated! Use as guideline only)
+# Example of Filled-Out Form
+
+* Please follow the exact format in the example submission! Otherwise our autograder may not be able to parse your submission.
 
 # Part 1: Algorand
 
@@ -28,8 +30,7 @@
 ## Step 4:
 
 * Transaction ID of the first transaction of the atomic transfer: `SXMMAGETGZ6SJS2CULLL5IAA4CFGUKA7N6LHLIH37NFEBAGH3XCA`
-* Transaction ID of the second transaction of the atomic transfer:
-`XPNV53JVVKHNSWKF7IV5E6BV726NMXXS6TIO7Q6GMCSDRF7RMICQ`
+* Transaction ID of the second transaction of the atomic transfer: `XPNV53JVVKHNSWKF7IV5E6BV726NMXXS6TIO7Q6GMCSDRF7RMICQ`
 
 # Part 2: Ethereum
 
