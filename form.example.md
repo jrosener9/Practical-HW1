@@ -31,18 +31,6 @@
 * Transaction ID of the second transaction of the atomic transfer:
 `XPNV53JVVKHNSWKF7IV5E6BV726NMXXS6TIO7Q6GMCSDRF7RMICQ`
 
-## Step 5.1:
-
-* Transaction ID for opt-in of account A: `A4HCJ37LXJOR64KF6ASWX5TO3EOWHP2PYSWAZYRO2I22JU2IVT4Q`
-
-## Step 5.2:
-
-* Transaction ID of the first transaction of the atomic transfer: `GXTO6KM4YPNGBZEWZT7CVZHFFLLL4PX32DKOQPZDUURN33BWY3EA`
-
-## Step 6:
-
-* Address of account: `b8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01`
-
 # Part 2: Ethereum
 
 ## Step 3:

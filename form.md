@@ -30,14 +30,6 @@
 * Transaction ID of the first transaction of the atomic transfer:
 * Transaction ID of the second transaction of the atomic transfer:
 
-## Step 5.1:
-
-* Transaction ID for opt-in of account A:
-
-## Step 5.2:
-
-* Transaction ID of the first transaction of the atomic transfer:
-
 # Part 2: Ethereum
 
 ## Step 3:
