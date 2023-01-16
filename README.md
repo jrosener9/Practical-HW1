@@ -421,6 +421,7 @@ Now that we’re done with setting up our transaction, we have to sign it off. J
 The hash of your transaction is:  0x…
 The hash of your transaction is:  0x…
 ```
+**Task:** Enter the second transaction hash into the form.
 
 ### Step 4.5
  Head over to Etherscan to inspect your transactions. After a minute or so, you should see your transactions to the HW0 contract: [https://goerli.etherscan.io/address/0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9](https://goerli.etherscan.io/address/0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9)

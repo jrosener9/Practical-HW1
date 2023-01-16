@@ -1,4 +1,7 @@
 # Example of Filled-Out Form (potentially outdated! Use as guideline only)
+
+# Part 1: Ethereum
+
 ## Step 1.1:
 
 * Address of account A: `ZBXIRU3KVUTZMFC2MNDHFZ5RZMEH6FYGYZ32B6BEJHQNKWTUJUBB72WL4Y`
@@ -37,3 +40,9 @@
 ## Step 6:
 
 * Address of account: `b8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01`
+
+# Part 2: Algorand
+
+## Step 4.4:
+
+* Second transaction hash: `0x6b5b310f09eae14edbfd7da8c72ae178773e26fd1f7e4e0996659d674b0448c7`

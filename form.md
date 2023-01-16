@@ -39,6 +39,6 @@
 
 # Part 2: Ethereum
 
-## Step 4.5: 
+## Step 4.3: 
 
-* Transaction ID of smart contract call: 
+* Second transaction hash:
