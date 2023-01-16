@@ -45,6 +45,10 @@
 
 # Part 2: Ethereum
 
+## Step 3:
+
+* Address of account: `0xd3fad2ee190fe2d3ff05171a887861f0e106a9c4`
+
 ## Step 4.4:
 
 * Second transaction hash: `0x6b5b310f09eae14edbfd7da8c72ae178773e26fd1f7e4e0996659d674b0448c7`

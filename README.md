@@ -258,7 +258,7 @@ Atomic transfers allow to group two transactions (transfer of asset from A to B,
 * either both transactions are successful: A gets its Algos and B gets its asset;
 * or both transactions fail: A keeps it asset and B keeps its Algos.
 
-**Task:** Make an atomic transfer where account B sends 1.2 Algos to account A and account A send 1 asset to account B. Report the transaction ID of both transactions of the atomic transfer on [form.md](form.md)
+**Task:** Make an atomic transfer where account B sends 1.2 Algos to account A and account A send 1 asset to account B. Report the transaction ID of both transactions in the atomic transfer on [form.md](form.md)
 
 Follow the [tutorial on the developer documentation](https://developer.algorand.org/docs/features/atomic_transfers).
 Concretely, your Python script needs to:
@@ -361,6 +361,8 @@ Create your app on the **Ethereum Chain** on the **Georli Testnet**
 
 Head over to a [Test ETH faucet](https://goerlifaucet.com/) and transfer some funds to your wallet. You’ll need to sign into Alchemy.
 
+**Task:** Submit the address of your newly funded account into the form.
+
 ## Step 4 - Send a sequence of transactions to mint a course NFT**** (18 points)
 
 This portion will be the bulk of the Ethereum part of the assignment. 
@@ -373,9 +375,7 @@ function mintNFT() public isInAddressBook(msg.sender)
 
 This means, to get our NFT, you will need to make the following two transactions (more details on how to do this below):
 
-1. Enter yourself in the address book. For added privacy, enter a sha256 hash of your real name. In gradescope, submit the exact string you used to generate your sha256 hash (Capitalization matters!).
-    
-    If you choose to submit your unencoded name, anyone who views the `AddressBook` mapping can associate your ethereum account number with you! By sending your name to the course staff, we will be able to generate that hash and associate your wallet with you without compromising your alias privacy on the blockchain.
+1. Enter yourself in the address book. For added privacy, enter a sha256 hash of your real name.
     
 2. Mint yourself an NFT. This won’t work if you’re not in the address book.
 
