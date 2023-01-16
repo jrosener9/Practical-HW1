@@ -457,5 +457,5 @@ Submit your form.md file and the python files you used to interact with the bloc
 ## Ethereum Part
 1. This part of the homework should be fairly trivial, post on Ed or come to OHs if you have any questions. 
 
-
-This concludes the homework! 🎉🎉
+This concludes the homework! 🎉🎉 
+Please submit `form.md` to the Practical HW 1 assignment on Gradescope.
