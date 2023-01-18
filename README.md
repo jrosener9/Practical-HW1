@@ -280,48 +280,6 @@ On [AlgoExplorer](https://testnet.algoexplorer.io) you can see that transactions
 
 If you do not see the above, it means you sent two independent transactions instead of making an atomic transfer.
 
-### Going Further (helpful info for HW 2)
-
-#### Contract Accounts vs Delegated Logic Sig
-
-The smart signature in Step 5 is used as a delegated logic sig: it allows a normal account to delegate some abilities to anyone. 
-Here the ability is to send 1 unit of asset in an atomic transfer where the first transaction pays 42 Algos.
-Anybody knowing the private key of the underlying account can sign arbitrary transactions without any restriction.
-A delegated logic sig is essentially a compiled smart signature signed by the private key of the underlying account.
-
-Algorand also supports more classical smart signature contract accounts.
-Smart signature contract accounts are accounts that are only controlled by a smart signature.
-All transactions must be approved by the smart signature and there is no associated private key.
-
-See [the developer documentation](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/smartsigs/modes/) for details.
-
-#### Explanation on How the Smart Signature Works
-
-The actual smart signature is [step5.teal](step5.teal).
-It was generated using [PyTeal](https://github.com/algorand/pyteal) that simplifies the writing of TEAL scripts, the language of smart contracts and smart signatures on Algorand.
-In other words, [step5.teal](step5.teal) is the output of [step5.teal.py](step5.teal.py).
-
-Concretely, to generate `step5.lsig`, the secret key of  `4O6BRAPVLX5ID23AZWV33TICD35TI6JWOHXVLPGO4VRJATO6MZZQRKC7RI` was added to `kmd` using `goal account import`, and then the following commands were run:
-```bash
-python3 step5.teal.py > step5.teal
-goal clerk compile -a 4O6BRAPVLX5ID23AZWV33TICD35TI6JWOHXVLPGO4VRJATO6MZZQRKC7RI -s step5.teal -o step5.lsig
-```
-This assumes that PyTeal is installed via `python3 -m pip pyteal` and that the [Algorand Command Line Interface Tools](https://developer.algorand.org/docs/build-apps/setup/#command-line-interface-cli-tools) were installed.
-
-#### Smart Contracts
-
-The smart signatures described previously are used to approve or reject transactions.
-They cannot store any variables / state on the blockchain.
-
-Algorand also has smart contracts.
-See [the developer documentation](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/) for details.
-The developer websites contain several examples of stateful smart contracts on Algorand:
-* [Voting dApp](https://developer.algorand.org/solutions/example-permissioned-voting-stateful-smart-contract-application/).
-* [Crowdfunding smart contract](https://developer.algorand.org/solutions/example-crowdfunding-stateful-smart-contract-application/) and its [associated frontend](https://developer.algorand.org/solutions/creating-crowdfunding-application-algorand-blockchain/).
-
-Most dApps actually now use smart contracts rather than smart signatures.
-Still smart signatures are useful in some specific use cases like the above simple automated trading (a smart contract would have been slightly more complex) and when very complex operations need to be performed (like slow cryptographic operations).
-
 # Part 2 - Ethereum
 
 ## Overview:
