@@ -36,8 +36,8 @@
 
 ## Step 3:
 
-* Address of account: ``
+* Address of account: `0x0A160de5C1bD37560A29E00e778bBD255Ead9573`
 
 ## Step 4.4:
 
-* Second transaction hash: ``
+* Second transaction hash: `0x1742a97d610a8201f9e7cdae90ac99c9454020f9e76402118af04ee0fc42e7a4`

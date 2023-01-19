@@ -1,13 +1,15 @@
-const API_URL = "https://eth-goerli.g.alchemy.com/v2/[Your api key here]"  // TODO
-const PUBLIC_KEY = "[Your account address here]"; // TODO 
-const PRIVATE_KEY = "[Your private key here]"; // TODO
+const API_URL = "https://eth-goerli.g.alchemy.com/v2/0FtJhESkXxCpmahbhYqn_kl7T5Du4QUP"  // TODO
+const PUBLIC_KEY = "0x0A160de5C1bD37560A29E00e778bBD255Ead9573"; // TODO 
+const PRIVATE_KEY = "c188ea59bc5fc1c51ffd3067f844cfef6773e744dde03fa3aa72daee26abd43d"; // TODO
 
-const { createAlchemyWeb3 } = require("@alch/alchemy-web3")
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+const { dir } = require("console");
 const web3 = createAlchemyWeb3(API_URL)
 
 const contract = require("./IntroToBlockchainNFT.json")
 const contractAddress = "0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9"
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress)
+
 
 async function sendTx(tx) {
     const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
@@ -29,7 +31,7 @@ async function sendTx(tx) {
 
 async function mintNFT(tokenURI) {
 
-  let hashOfName = "[SHA-256 hash of your name]"; // TODO
+  let hashOfName = "306364168740ac3852ce7405fd3a2ab3965bd66a9d52f177ab9da1117421582a"; // TODO
 
   let nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, "latest") //get latest nonce
 
@@ -50,7 +52,7 @@ async function mintNFT(tokenURI) {
     to: contractAddress,
     nonce: nonce,
     gas: 500000,
-    data: "" //TODO add a call to mintNFT here
+    data: nftContract.methods.mintNFT().encodeABI()
   }
 
   await sendTx(tx2);
