@@ -25,7 +25,7 @@ async function sendTx(tx) {
             }
           )
         }).catch((err) => {
-          console.log("Promise failed:", err)
+          console.log("Promise failed:", err) 
     })
 }
 
