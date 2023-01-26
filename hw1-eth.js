@@ -10,7 +10,6 @@ const contract = require("./IntroToBlockchainNFT.json")
 const contractAddress = "0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9"
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress)
 
-
 async function sendTx(tx) {
     const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
     signPromise.then((signedTx) => {
