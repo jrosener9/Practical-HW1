@@ -4,7 +4,7 @@ const PRIVATE_KEY = "c188ea59bc5fc1c51ffd3067f844cfef6773e744dde03fa3aa72daee26a
 
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const { dir } = require("console");
-const web3 = createAlchemyWeb3(API_URL)
+const web3 = createAlchemyWeb3(API_URL) 
 
 const contract = require("./IntroToBlockchainNFT.json")
 const contractAddress = "0x978A328Cc24C0b50a0D9F97787938E67CF09F9A9"
